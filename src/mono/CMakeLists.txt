@@ -952,6 +952,10 @@ if(CLR_CMAKE_HOST_APPLE)
   endif()
 endif()
 
+if(HOST_IOS)
+  unset(DISABLE_DLLMAP)
+endif()
+
 ### End of OS specific checks
 
 include_directories("${CLR_SRC_NATIVE_DIR}")
