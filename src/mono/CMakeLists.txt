@@ -899,6 +899,12 @@ if(HOST_IOS OR HOST_ANDROID OR HOST_MACCAT)
 else()
   set(DISABLE_DLLMAP 1)
 endif()
+
+if(HOST_LINUX)
+  unset(HAVE_GETRANDOM)
+  unset(HAVE_GETENTROPY)
+endif()
+
 ### End of OS specific checks
 
 include_directories("${CLR_SRC_NATIVE_DIR}")
