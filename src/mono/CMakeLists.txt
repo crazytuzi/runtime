@@ -952,6 +952,11 @@ if(CLR_CMAKE_HOST_APPLE)
   endif()
 endif()
 
+if(HOST_LINUX)
+  unset(HAVE_GETRANDOM)
+  unset(HAVE_GETENTROPY)
+endif()
+
 ### End of OS specific checks
 
 include_directories("${CLR_SRC_NATIVE_DIR}")
