@@ -907,6 +907,11 @@ if(HOST_ANDROID)
     add_link_options(LINKER:-z,max-page-size=16384)
   endif()
 endif()
+
+if(HOST_LINUX)
+  unset(HAVE_GETRANDOM)
+  unset(HAVE_GETENTROPY)
+endif()
 ### End of OS specific checks
 
 include_directories("${CLR_SRC_NATIVE_DIR}")
